@@ -55,7 +55,7 @@
 - (YYAnimatedImageView *)imageView {
     if (!_imageView) {
         _imageView = [YYAnimatedImageView new];
-        _imageView.contentMode = UIViewContentModeScaleAspectFill;
+        _imageView.contentMode = UIViewContentModeScaleToFill;
         _imageView.layer.masksToBounds = YES;
     }
     return _imageView;

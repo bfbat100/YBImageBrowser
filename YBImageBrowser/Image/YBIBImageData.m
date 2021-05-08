@@ -594,6 +594,12 @@ static dispatch_queue_t YBIBImageProcessingQueue(void) {
     return self.allowSaveToPhotoAlbum;
 }
 
+- (void)yb_longPressImage {
+    if (self.longPressEventCallBack) {
+        self.longPressEventCallBack();
+    }
+}
+
 - (void)yb_shareToWeChat {
     if (self.shareToWeChatCallBack) {
         self.shareToWeChatCallBack();

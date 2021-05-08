@@ -34,10 +34,11 @@
     [self showStatusBar];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame  isFuYouQuan:(BOOL)isFuYouQuan{
+- (instancetype)initWithFrame:(CGRect)frame  isFuYouQuan:(BOOL)isFuYouQuan isNoShowAction:(BOOL)isNoShowAction{
     self = [super initWithFrame:frame];
     if (self) {
         self.isFuYouQuan = isFuYouQuan;
+        self.isNoShowAction = isNoShowAction;
         self.backgroundColor = UIColor.blackColor;
         UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(respondsToLongPress:)];
         [self addGestureRecognizer:longPress];
@@ -55,6 +56,12 @@
     _defaultToolViewHandler.isFuYouQuan = self.isFuYouQuan;
     _defaultToolViewHandler.hideBrowser = ^{
         [self  hide];
+    };
+    _defaultToolViewHandler.isNoShowAction = self.isNoShowAction;
+    _defaultToolViewHandler.longPressImage = ^{
+        if (self.longPressImage) {
+            self.longPressImage(self.currentPage);
+        }
     };
     _auxiliaryViewHandler = [YBIBAuxiliaryViewHandler new];
     _shouldHideStatusBar = YES;

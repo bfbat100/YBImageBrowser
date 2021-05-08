@@ -138,6 +138,8 @@ typedef void (^YBIBImageScrollViewStatusBlock)(YBIBImageData *imageData, UIScrol
 /// 分享到福信事件回调
 @property (nonatomic,copy) void(^shareToWeChatCallBack)(void);
 
+/// 图片长按事件回调
+@property (nonatomic,copy) void(^longPressEventCallBack)(void);
 
 /**
  终止处理数据程序

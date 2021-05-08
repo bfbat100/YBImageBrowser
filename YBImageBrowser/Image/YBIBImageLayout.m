@@ -52,9 +52,9 @@
                 x = 0;
                 y = (containerSize.height - height) / 2.0;
             } else {
-                height = containerSize.height;
-                width = containerSize.height * (imageSize.width / imageSize.height);
-                x = (containerSize.width - width) / 2.0;
+                width = containerSize.width;
+                height = containerSize.width * (imageSize.height / imageSize.width);
+                x = 0;
                 y = 0;
             }
         }

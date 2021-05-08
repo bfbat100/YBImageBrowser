@@ -89,6 +89,12 @@
 //        [self.sheetView hideWithAnimation:YES];
 //    }];
     
+    if (self.isNoShowAction) {
+        if (self.longPressImage){
+            self.longPressImage();
+        }
+        return;
+    }    
     if ([self currentDataShouldHideSaveButton]) {
         [self.sheetView.actions removeObject:self.saveAction];
     } else {

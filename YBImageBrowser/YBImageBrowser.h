@@ -113,8 +113,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *actionTitle;
 
+@property (nonatomic, copy) void (^longPressImage)(NSInteger currentPage);
+///长按图片是否显示底部选项弹框
+@property (nonatomic, assign) BOOL  isNoShowAction;
 
-- (instancetype)initWithFrame:(CGRect)frame isFuYouQuan:(BOOL)isFuYouQuan;
+
+
+- (instancetype)initWithFrame:(CGRect)frame  isFuYouQuan:(BOOL)isFuYouQuan isNoShowAction:(BOOL)isNoShowAction;
 
 @end
 

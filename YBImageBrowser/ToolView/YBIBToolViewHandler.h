@@ -65,7 +65,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,copy) void(^hideBrowser)(void);
 
+@property (nonatomic,copy) void(^longPressImage)(void);
+
+///是否是福友圈使用
 @property (nonatomic, assign) BOOL  isFuYouQuan;
+
+///长按图片是否显示底部选项弹框
+@property (nonatomic, assign) BOOL  isNoShowAction;
 
 @property (nonatomic, strong) NSString  *actionTitle;
 

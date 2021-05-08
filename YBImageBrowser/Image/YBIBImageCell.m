@@ -108,7 +108,13 @@
     }
     
     CGSize containerSize = self.yb_containerSize(orientation);
-    CGRect imageViewFrame = [data.layout yb_imageViewFrameWithContainerSize:containerSize imageSize:imageSize orientation:orientation];
+    CGRect imageViewFrame ;
+//    if (imageSize.height > containerSize.height) {
+//        imageViewFrame = CGRectMake(0, 0, containerSize.width, imageSize.height / imageSize.width * containerSize.width);
+//    }else {
+//    }
+    imageViewFrame = [data.layout yb_imageViewFrameWithContainerSize:containerSize imageSize:imageSize orientation:orientation];
+
     CGSize contentSize = [self contentSizeWithContainerSize:containerSize imageViewFrame:imageViewFrame];
     CGFloat maxZoomScale = imageType == YBIBScrollImageTypeThumb ? 1 : [data.layout yb_maximumZoomScaleWithContainerSize:containerSize imageSize:imageSize orientation:orientation];
     
@@ -116,7 +122,7 @@
     self.imageScrollView.zoomScale = 1;
     self.imageScrollView.contentSize = contentSize;
     self.imageScrollView.minimumZoomScale = 1;
-    self.imageScrollView.maximumZoomScale = maxZoomScale;
+    self.imageScrollView.maximumZoomScale = 3.5 ;
     
     CGFloat scale;
     if (previousImageSize.width > 0 && previousImageSize.height > 0) {
